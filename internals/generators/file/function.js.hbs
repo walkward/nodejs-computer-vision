@@ -1,0 +1,36 @@
+/**
+ * {{ sentenceCase summary }}
+ */
+
+{{#if restMethods}}
+{{!-- Generate rest methods when restMethods is true --}}
+/** Retreive method for GET requests */
+export function retreive(params: { ids: string[]}): Object[] {
+  // ...retreive logic
+  return [{}];
+}
+
+/** Create method for POST requests */
+export function create(objects: Object[]): Object[] {
+  // ...create logic
+  return [{}];
+}
+
+/** Update method for PUT requests */
+export function update(objects: Object[]): Object[] {
+  // ...update logic
+  return [{}];
+}
+
+/** Remove method for DELETE requests */
+export function remove(ids: string[]): number {
+  // ...remove logic
+  return ids.length;
+}
+{{else}}
+{{!-- Generate generic method by default --}}
+/** {{ titleCase name }} description */
+export function {{ camelCase name }} () : void {
+  // ...function code
+}
+{{/if}}

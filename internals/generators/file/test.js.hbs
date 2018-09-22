@@ -1,0 +1,11 @@
+/**
+{{#if generateTest}} * Tests for {{ name }} {{ type }}
+{{else}} * {{ sentenceCase summary }}
+{{/if}}
+ */
+
+import test from 'ava';
+
+test('{{ titleCase name }} test', async (t) => {
+  t.is(await Promise.resolve('foo'), 'foo');
+});

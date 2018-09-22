@@ -59,3 +59,14 @@ typings/
 
 # next.js build output
 .next
+
+# OSX files
+.DS_Store
+
+# VS Code Settings
+.vscode
+
+# Project specific ignores
+dist
+reports
+data/models

@@ -1,0 +1,11 @@
+.git
+npm-debug.log
+README.md
+LICENSE
+Dockerfile
+.editorconfig
+reports
+.nyc_output
+coverage
+.DS_Store
+.vscode
