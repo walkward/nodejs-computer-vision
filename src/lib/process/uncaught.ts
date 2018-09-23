@@ -5,8 +5,7 @@
  *
  */
 
-import AppError from '../models/AppError';
-import { handleError } from '../utils/errors';
+import { AppError, handleError } from '../../utils/errors';
 
 process.on('unhandledRejection', (err: AppError) => {
   throw err;

@@ -70,3 +70,4 @@ typings/
 dist
 reports
 data/models
+data/temp/

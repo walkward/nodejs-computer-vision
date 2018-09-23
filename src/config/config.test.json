@@ -1,9 +1,9 @@
 {
   "server": {
-    "port": 3000,
+    "port": 3001,
     "jwtSecret": "random-secret-password",
     "jwtExpiration": "1h",
     "routePrefix": "",
-    "plugins": []
+    "plugins": ["logging"]
   }
 }

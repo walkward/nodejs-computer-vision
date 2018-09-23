@@ -11,9 +11,18 @@
 
 import * as winston from 'winston';
 
+const level = () => {
+  if (process.env.NODE_ENV === 'production') return 'info';
+  if (process.env.NODE_ENV === 'test') return 'error';
+  return 'debug';
+};
+
 const logger: winston.Logger = winston.createLogger({
-  level: process.env.NODE_ENV === 'production' ? 'info' : 'debug',
-  format: winston.format.simple(),
+  level: level(),
+  format: winston.format.combine(
+    winston.format.colorize(),
+    winston.format.simple(),
+  ),
   transports: [
     new winston.transports.Console({
       handleExceptions: true,

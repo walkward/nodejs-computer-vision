@@ -3,8 +3,7 @@
  */
 
 import test from 'ava';
-import AppError from '../models/AppError';
-import { handleError } from '../utils/errors';
+import { AppError, handleError } from '../src/utils/errors';
 
 test('Central error handler should log message', (t) => {
   const error = new AppError('Sample Error', false);

@@ -1,6 +1,8 @@
 import * as Hapi from 'hapi';
+import * as Analyze from './api/analyze';
 import { IServerConfigurations } from './config';
-import { IPlugin } from './plugins/interfaces';
+import { IPlugin } from './types/plugins';
+import logging from './utils/logging';
 
 export async function init(
   configs: IServerConfigurations,
@@ -30,7 +32,7 @@ export async function init(
 
     plugins.forEach((pluginName: string) => {
       const plugin: IPlugin = require('./plugins/' + pluginName).default();
-      console.log(
+      logging.info(
         `Register Plugin ${plugin.info().name} v${plugin.info().version}`,
       );
       pluginPromises.push(plugin.register(server, pluginOptions));
@@ -38,15 +40,15 @@ export async function init(
 
     await Promise.all(pluginPromises);
 
-    console.log('All plugins registered successfully.');
+    logging.info('All plugins registered successfully.');
 
-    console.log('Register Routes');
-    // Logs.init(server, configs, database);
-    console.log('Routes registered sucessfully.');
+    logging.info('Register Routes');
+    Analyze.init(server, configs);
+    logging.info('Routes registered sucessfully.');
 
     return server;
   } catch (err) {
-    console.log('Error starting server: ', err);
+    logging.error('Error starting server: ', err);
     throw err;
   }
 }

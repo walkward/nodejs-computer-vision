@@ -63,7 +63,7 @@ module.exports = {
       test: {
         type: 'add',
         templateFile: path.join(__dirname, './test.js.hbs'),
-        path: path.join(__dirname, '../../../src/tests/{{ camelCase name }}.test.ts'),
+        path: path.join(__dirname, '../../../tests/{{ camelCase name }}.test.ts'),
       },
       model: {
         type: 'add',

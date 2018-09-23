@@ -1,12 +1,16 @@
 {
   "watch": [
-    "src"
+    "src",
+    "tests"
   ],
   "ext": "ts",
   "ignore": [
     "src/**/*.spec.ts"
   ],
   "execMap": {
-    "ts": "ava-ts --color | ts-node"
+    "ts": "ts-node"
+  },
+  "events": {
+    "start": "NODE_ENV=test ava-ts --color"
   }
 }
