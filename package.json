@@ -17,7 +17,10 @@
     "build": "tsc",
     "lint": "tslint src/**/*.ts",
     "test": "NODE_ENV=test nyc ava-ts",
-    "generate": "plop --plopfile internals/generators/index.js"
+    "generate": "plop --plopfile internals/generators/index.js",
+    "knex:migrate": "knex migrate:latest --knexfile $PWD/src/config/knexfile.js --cwd .",
+    "knex:rollback": "knex migrate:rollback --knexfile $PWD/src/config/knexfile.js --cwd .",
+    "knex:seeds": "knex seed:run --knexfile $PWD/src/config/knexfile.js --cwd ."
   },
   "author": "Walker Ward <walker.ward1@gmail.com>",
   "license": "AGPL-3.0-only",
@@ -35,11 +38,13 @@
     "hapi-swagger": "9.1.1",
     "inert": "5.1.0",
     "joi": "13.6.0",
+    "knex": "0.15.2",
     "nconf": "0.10.0",
+    "pg": "7.4.3",
     "ts-node": "7.0.0",
     "typescript": "3.0.3",
     "vision": "5.4.0",
-    "winston": "2.4.4"
+    "winston": "3.1.0"
   },
   "devDependencies": {
     "@types/boom": "7.2.0",
@@ -48,8 +53,10 @@
     "@types/download": "6.2.2",
     "@types/hapi": "17.0.19",
     "@types/joi": "13.4.5",
+    "@types/knex": "0.14.24",
     "@types/nconf": "0.0.37",
     "@types/node": "10.10.3",
+    "@types/pg": "7.4.10",
     "@types/supertest": "2.0.6",
     "nodemon": "1.18.4",
     "nyc": "13.0.1",

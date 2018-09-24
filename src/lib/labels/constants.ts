@@ -1,8 +1,15 @@
 import * as path from 'path';
 
+// export const settings = {
+//   prototxt: path.resolve('data/models/coco-SSD_300x300', 'deploy.prototxt'),
+//   modelFile: path.resolve('data/models/coco-SSD_300x300', 'VGG_coco_SSD_300x300_iter_400000.caffemodel'),
+//   maxImgDim: 300,
+// };
+
 export const settings = {
-  prototxt: path.resolve('data/models/coco-SSD_300x300', 'deploy.prototxt'),
-  modelFile: path.resolve('data/models/coco-SSD_300x300', 'VGG_coco_SSD_300x300_iter_400000.caffemodel'),
+  prototxt: path.resolve('data/models/inception21k', 'deploy.prototxt'),
+  modelFile: path.resolve('data/models/inception21k', 'inception21k.caffemodel'),
+  maxImgDim: 224,
 };
 
 export const classNames = [
